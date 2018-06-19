@@ -42,6 +42,9 @@ class PhoneNumber(phonenumbers.PhoneNumber):
         fmt = self.format_map[format_string]
         return self.format_as(fmt)
 
+    def __lt__(self, other):
+        return str(self) < str(other)
+
     def is_valid(self):
         """
         checks whether the number supplied is actually valid
